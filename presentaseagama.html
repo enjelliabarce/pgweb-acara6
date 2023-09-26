@@ -92,7 +92,29 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        
+        var options = {
+          series: [83.31, 84.57, 84.11, 88.37, 93.65, 74.97, 82.29, 77.93, 72.97, 84.75, 80.82, 76.53, 74.86, 80.92, ],
+          chart: {
+          type: 'donut',
+          width: '400',
+        },
+        labels: ['Mantrijeron', 'Kraton', 'Mergangsan', 'Umbulharjo', 'Kotagede', 'Gondokusuman', 'Danurejan', 'Pakualaman', 'Gondomanan', 'Ngampilan', 'Wirobrajan', 'Gedongtengen', 'Jetis', 'Tegalrejo'],
+
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
     </script>
 
 </body>
