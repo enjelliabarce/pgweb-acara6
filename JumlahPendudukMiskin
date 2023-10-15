@@ -35,7 +35,7 @@
                             <li><a class="dropdown-item" href="index.html">Jumlah Penduduk</a></li>
                             <li><a class="dropdown-item" href="pendudukjeniskelamin.html">Penduduk menurut jenis kelamin </a></li>
                             <li><a class="dropdown-item" href="presentaseagama.html">Presentase Agama</a></li>
-                            <li><a class="dropdown-item" href="JumlahPendudukMiskin">Jumlah Penduduk Miskin</a></li>
+                            <li><a class="dropdown-item" href="JumlahPendudukMiskin"> Jumlah Penduduk Miskin</a></li>
                             <li><a class="dropdown-item" href="jumlahkelurahan">Jumlah Kelurahan</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -55,7 +55,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h4>Jumlah Penduduk</h4>
+                <h4>Jumlah Penduduk Miskin</h4>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -94,65 +94,37 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        var options = {
-            series: [{
-                name: 'Net Profit',
-                data: [36122, 20014, 33744, 89810, 36541, 52184, 21117, 10666, 15018, 18791, 28612, 19857, 26929, 40485]
-            }],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top',
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['Mantrijeron', 'Kraton', 'Mergangsan', 'Umbulharjo', 'Kotagede', 'Gondokusuman', 'Danurejan', 'Pakualaman', 'Gondomanan', 'Ngampilan', 'Wirobrajan', 'Gedongtengen', 'Jetis', 'Tegalrejo'],
-                title: {
-                    text: 'Kecamatan'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Jiwa'
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return val + " Jiwa "
-                    }
-                }
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val;
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ["#304758"]
-                }
-            },
+       var options = {
+          series: [{
+            name: "Jumlah Kemiskinan ",
+            data: [35.60, 35.60, 35.98, 32.06, 32.20, 29.75, 29.45, 31.62, 34.07]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        title: {
+          text: 'Jumlah Penduduk Miskin kota Yogyakarta',
+          align: 'left'
+        },
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
+        },
+        xaxis: {
+          categories: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+        }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
